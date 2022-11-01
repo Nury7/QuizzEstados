@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="Description" content="Enter your description here" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+   
+  </head>
+  <body>
+      <div class="container mt-4">
+          <div class="row">
+              <div class="col-lg-12">
+                  <h1 class="alert alert-primary text-center">
+                      Estados Registrados
+                    </h1>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <form id="form">
+                                
+                            <div class="buscar">
+                            <input type="text" placeholder="Buscar" id="buscar" required />
+                            <div class="btn">
+                             </div>
+                            </div>
+
+                            <input type="hidden" name="id" id="id">
+                            <label for="">Nombre</label>
+                            <input type="text" placeholder="Nombre" class="form-control" name="nombre" id="nombre" required>
+                            <br>
+                            <label for="">Clave</label>
+                            <input type="text" placeholder="Clave" class="form-control" name="clave" id="clave" required>
+                            <br>
+                            <label for="">Capital</label>
+                            <input type="text" placeholder="Capital" class="form-control" id="capital" name="capital" required >
+                            <br>
+                            <label for="">Habitantes</label>
+                           <input type="text" placeholder="Numero de Habitantes" class="form-control" id="habitantes" name="habitantes" required>
+                            <br>
+                           
+                            <br>
+                            <label for="">Resp.Incorrecta1</label>
+                           <input type="text" placeholder="Respuesta Incorrecta 1" class="form-control" id="incorrecta1" name="incorrecta1" required>
+                            <br>
+                            <br>
+                            <label for="">Resp.Incorrecta2</label>
+                           <input type="text" placeholder="Respuesta Incorrecta2" class="form-control" id="incorrecta2" name="incorrecta2" required>
+                            <br>
+                            <br>
+                            <label for="">Resp.incorrecta3</label>
+                           <input type="text" placeholder="Respuesta incorrecta3" class="form-control" id="incorrecta3" name="incorrecta3" required>
+                            <br>
+
+                            <label for="">Imagen</label>
+                            <input type="text" placeholder="URL Imagen" class="form-control" id="imagen" name="imagen" required>
+                            <br>
+                            <button class="btn btn-sm btn-primary" type="button" onclick="guardar()">Guardar</button>
+                            <button class="btn btn-sm btn-primary" type="button" onclick="limpiarDatos()">Reset</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="datatable" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Nombre</th>
+                                        <th>Clave</th>
+                                        <th>Capital</th>
+                                        <th>Num.Habitantes</th>
+                                        <th>URL Imagen</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="table">
+        
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+    <script src="crud.js"></script>
+  
+    <script>
+        mostrarDatos()
+    </script>
+    <script>
+        function limpiarDatos(){
+            document.getElementById('form').reset()
+            document.getElementById('id').value = ""
+        }
+    </script>
+  </body>
+</html> 
